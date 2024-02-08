@@ -1,0 +1,30 @@
+---
+Customer:
+  groups:
+    - Customer VPN
+  users: []
+Network:
+  groups:
+    - Administrators
+    - CCP Admins
+    - Domain Admins
+    - Employee VPN
+    - Lab Admin
+    - Lab Manager
+    - Network Admins
+    - Secrets Admin
+    - Storage Admin
+    - TME Admin
+  users: []
+Security:
+  groups:
+    - Administrators
+    - CCP Admins
+    - Domain Admins
+    - Employee VPN
+    - Lab Admin
+    - Lab Manager
+    - Secrets Admin
+    - Security Admin
+    - TME Admin
+  users: []
