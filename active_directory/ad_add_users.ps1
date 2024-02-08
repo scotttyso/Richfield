@@ -37,13 +37,11 @@ if ($win_version -like "*Windows 11*") {
             Import-Module $rm.Split("\")[0]
         }
     }
-} else {
-    Write-Host "DIDNT MATCH $win_version"
-    exit
-}
+} else { Write-Host "DIDNT MATCH $win_version"; exit }
+$get_modules = Get-Module -ListAvailable
 $required_modules = @("ImportExcel", "powershell-yaml")
 foreach ($rm in $required_modules) {
-    if (!(Get-Module -ListAvailable -Name $rm)) {
+    if (!($get_modules | Where-Object {$_.Name -eq $rm})) {
         Write-Host " * $($computer_name) Installing $rm." -ForegroundColor Green
         Install-Module $rm -AllowClobber -Confirm:$False -Force
         Import-Module $rm
